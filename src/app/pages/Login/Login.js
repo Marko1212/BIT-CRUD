@@ -40,7 +40,7 @@ class Login extends React.Component {
             <a href="#/">Forgot password?</a>
           </div>
           <div className="col s6">
-            <a href="#/">Don't have an account? Sing Up</a>
+            <a href="#/">Don't have an account? Sign Up</a>
           </div>
         </div>
       </div>
