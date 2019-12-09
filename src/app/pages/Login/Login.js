@@ -22,7 +22,7 @@ class Login extends React.Component {
       <div className="container">
         <div className="row">
           <Title text={"Login"} />
-          <FormTitle title={"Sing in"} />
+          <FormTitle title={"Sign in"} />
         </div>
 
         <div className="row">
