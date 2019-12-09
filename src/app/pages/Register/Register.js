@@ -35,7 +35,7 @@ class Register extends React.Component {
         <div className="row">
           <Checkbox
             children={
-              "I want to recieve inspiration, marketing promotions and updates via email."
+              "I want to receive inspiration, marketing promotions and updates via email."
             }
           />
         </div>
