@@ -2,11 +2,10 @@ import React from "react";
 import Title from "../../components/Title/Title";
 import FormTitle from "../../components/FormTitle/FormTitle";
 import Input from "../../components/Input/Input";
-import "./Register.css";
 import Checkbox from "../../components/Checkbox/CheckBox";
 import Button from "../../components/Button/Button";
 
-class Register extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,18 +13,16 @@ class Register extends React.Component {
       email: "",
       password: ""
     };
-  }
+  } /*
+  onEmailChange = event => {};
+  onSubmit = () => {};*/
+
   render() {
     return (
       <div className="container">
         <div className="row">
-          <Title text={"Register"} />
-          <FormTitle title={"Sing up"} />
-        </div>
-
-        <div className="row">
-          <Input cols={6} type={"text"} label={"First Name *"} />
-          <Input cols={6} type={"text"} label={"Last Name *"} />
+          <Title text={"Login"} />
+          <FormTitle title={"Sing in"} />
         </div>
 
         <div className="row">
@@ -33,17 +30,21 @@ class Register extends React.Component {
           <Input cols={12} type={"password"} label={"Password *"} />
         </div>
         <div className="row">
-          <Checkbox
-            children={
-              "I want to recieve inspiration, marketing promotions and updates via email."
-            }
-          />
+          <Checkbox children={"Remember me."} />
         </div>
         <div className="row">
-          <Button text={"SIGN UP"} />
+          <Button text={"SIGN IN"} />
+        </div>
+        <div className="row">
+          <div className="col s6">
+            <a href="#/">Forgot password?</a>
+          </div>
+          <div className="col s6">
+            <a href="#/">Don't have an account? Sing Up</a>
+          </div>
         </div>
       </div>
     );
   }
 }
-export default Register;
+export default Login;
