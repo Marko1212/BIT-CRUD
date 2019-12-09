@@ -20,7 +20,7 @@ class Register extends React.Component {
       <div className="container">
         <div className="row">
           <Title text={"Register"} />
-          <FormTitle title={"Sing up"} />
+          <FormTitle title={"Sign up"} />
         </div>
 
         <div className="row">
