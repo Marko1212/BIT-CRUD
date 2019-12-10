@@ -3,7 +3,7 @@ import Title from "../../components/Title/Title";
 import FormTitle from "../../components/FormTitle/FormTitle";
 import Input from "../../components/Input/Input";
 import "./Register.css";
-import Checkbox from "../../components/Checkbox/CheckBox";
+import Checkbox from "../../components/CheckBox/CheckBox";
 import Button from "../../components/Button/Button";
 import { Link } from 'react-router-dom';
 
@@ -42,12 +42,12 @@ class Register extends React.Component {
         </div>
         <div className="row">
           <Button text={"SIGN UP"} />
-          
+
         </div>
         <div className="row">
-        <p><Link to="/login">Already have an account? Log in.</Link></p>
-                </div>
-                <br />
+          <p><Link to="/login">Already have an account? Log in.</Link></p>
+        </div>
+        <br />
       </div>
     );
   }
