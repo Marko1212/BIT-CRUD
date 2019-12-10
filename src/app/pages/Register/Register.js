@@ -5,6 +5,7 @@ import Input from "../../components/Input/Input";
 import "./Register.css";
 import Checkbox from "../../components/Checkbox/CheckBox";
 import Button from "../../components/Button/Button";
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
   constructor(props) {
@@ -24,8 +25,8 @@ class Register extends React.Component {
         </div>
 
         <div className="row">
-          <Input cols={6} type={"text"} label={"First Name *"} />
-          <Input cols={6} type={"text"} label={"Last Name *"} />
+          <Input cols={12} type={"text"} label={"First Name *"} />
+          <Input cols={12} type={"text"} label={"Last Name *"} />
         </div>
 
         <div className="row">
@@ -41,7 +42,12 @@ class Register extends React.Component {
         </div>
         <div className="row">
           <Button text={"SIGN UP"} />
+          
         </div>
+        <div className="row">
+        <p><Link to="/login">Already have an account? Log in.</Link></p>
+                </div>
+                <br />
       </div>
     );
   }
