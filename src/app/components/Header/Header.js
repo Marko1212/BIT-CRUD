@@ -6,10 +6,10 @@ const Header = props => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <span className="left brand-logo">
+        <span className="left">
           CRUD
         </span>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
+        <ul id="nav-mobile" className="right">
           <li>
           <Link to='/posts'>Posts</Link>
           </li>

@@ -6,17 +6,17 @@ import Register from "./app/pages/Register/Register";
 import Login from "./app/pages/Login/Login";
 import AboutPage from "./app/pages/About/AboutPage"
 import "./App.css";
+import PostsList from './PostList/PostsList'
 
 
 function App() {
   return (
     <div className="App">
       <Header />
-
       <Route exact path='/' component={Register} />
       <Route path='/login' component={Login} />
       <Route exact path='/about' component={AboutPage} />
-      {/*      <Route path='/posts' component={PostsPage} /> */}
+      <Route exact path = '/posts' component = {PostsList} />
       <Footer />
     </div>
   );
