@@ -24,9 +24,3 @@ function App() {
 
 export default App;
 
-
-
-/*
-<Header />
-<Login />
-<Footer /> */
