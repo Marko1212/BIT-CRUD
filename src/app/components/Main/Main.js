@@ -1,5 +1,5 @@
 import React from "react";
-import CheckBox from "../Checkbox/CheckBox";
+import CheckBox from "../CheckBox/CheckBox";
 import Button from "../Button/Button";
 
 const Main = () => {
