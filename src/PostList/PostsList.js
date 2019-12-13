@@ -46,7 +46,7 @@ class PostsList extends Component {
 
                 <div className="postList">
                     {this.state.posts.map((post, i) =>
-                        <CardPost key={i} {...post} />
+                        <Post key={i} {...post} />
                     )}
                 </div>
 
