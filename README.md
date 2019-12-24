@@ -21,7 +21,7 @@ Forms > Controlled Components > Handling Multiple Inputs
   }
 
 
-- Sustina ovog pristupa je da se podaci koje unesem u polja forme automatski kopiraju u state. 
+- Sustina ovog pristupa je da se podaci koje unesemo u polja forme automatski kopiraju u state. 
 A iz state-a je citanje i prikupljanje podataka maksimalno jednostavno.
 
 - Na primer kada zelimo da submitujemo podatke iz login forme to uradimo jednostavno sa 
