@@ -39,7 +39,7 @@ i onda te podatke saljemo login funkciji iz servisa za logovanje.
 - U folder services sam stavio funkcije koje nisu deo samog React frameworka a izvrsavaju odredjene usluge, 
 pre svega dobavljanje podataka, zapisivanje podataka u memoriju i slanje zahteva API-ju.
 
-- errorService sadrzi univerzalnu funkciju handleError koju koristim za najminimalnije moguce handlovanje greskama u ostalim servisima. 
+- errorService sadrzi univerzalnu funkciju handleError koju koristim za najminimalnije moguce hendlovanje gresaka u ostalim servisima. 
 
 Za sada ta funkcija samo ispise "ERROR" i sadrzaj greske u console, cisto da bismo imali bar najosnovniju informaciju da se desila greska.
 
@@ -74,7 +74,8 @@ Tako se menja stanje cele aplikacije iz stanja ulogovan u stanje izlogovan i obr
 
 - Nakon dodavanja posta, ostaje na stranici forme. Mora rucno da se klikne na link My posts bi se prikazala lista mojih postova.
 
-- Na stranici "My posts" nakon brisanja posta postoji nekakav bug i stranica nece da se refreshuje kako treba. Mora rucno da se jos jednom da se vrati na stranicu My posts da bi se lista postova ponovo prikazala.
+- Na stranici "My posts" nakon brisanja posta postoji nekakav bug i stranica nece da se refreshuje kako treba. 
+Mora rucno da se jos jednom vrati na stranicu My posts da bi se lista postova ponovo prikazala.
 
 - Prikaz gresaka u formi nije uradjen.
 
