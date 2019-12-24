@@ -5,7 +5,7 @@
 
 ## BARATANJE FORMAMA
 
-- U formama Login, Register i __________ sam koristio standardne React "controlled forms" forme pomocu neizmenjenog koda sa zvanicne React dokumentacije:
+- U formama Login i Register sam koristio standardne React "controlled forms" forme pomocu neizmenjenog koda sa zvanicne React dokumentacije:
 https://reactjs.org/docs/forms.html#handling-multiple-inputs
 Forms > Controlled Components > Handling Multiple Inputs
 
