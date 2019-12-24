@@ -1,7 +1,7 @@
 import React from 'react';
-import './Post.css'
+import './CardPost.css'
 
-const Post = ({title, subtitle, text, imageUrl,createdAt}) => 
+const CardPost = ({title, subtitle, text, imageUrl, createdAt}) => 
         <div className="post">
             <div className="post_image">
                 <img src={imageUrl} alt={imageUrl} />
@@ -19,4 +19,4 @@ const Post = ({title, subtitle, text, imageUrl,createdAt}) =>
         </div>
 
  
-export default Post;
+export default CardPost;

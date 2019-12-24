@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+﻿# TEHNICKI OPIS
 
-## Available Scripts
+- React aplikacija je uradjena pomocu create-react-app
 
-In the project directory, you can run:
 
-### `npm start`
+## BARATANJE FORMAMA
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- U formama Login, Register i __________ sam koristio standardne React "controlled forms" forme pomocu neizmenjenog koda sa zvanicne React dokumentacije:
+https://reactjs.org/docs/forms.html#handling-multiple-inputs
+Forms > Controlled Components > Handling Multiple Inputs
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    this.setState({
+      [name]: value
+    });
+  }
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Sustina ovog pristupa je da se podaci koje unesem u polja forme automatski kopiraju u state. 
+A iz state-a je citanje i prikupljanje podataka maksimalno jednostavno.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Na primer kada zelimo da submitujemo podatke iz login forme to uradimo jednostavno sa 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    let submitData = {
+      email: this.state.email,
+      password: this.state.password
+    }
 
-### `npm run eject`
+i onda te podatke saljemo login funkciji iz servisa za logovanje.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## SERVICES
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- U folder services sam stavio funkcije koje nisu deo samog React frameworka a izvrsavaju odredjene usluge, 
+pre svega dobavljanje podataka, zapisivanje podataka u memoriju i slanje zahteva API-ju.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- errorService sadrzi univerzalnu funkciju handleError koju koristim za najminimalnije moguce handlovanje greskama u ostalim servisima. 
 
-## Learn More
+Za sada ta funkcija samo ispise "ERROR" i sadrzaj greske u console, cisto da bismo imali bar najosnovniju informaciju da se desila greska.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## OPIS TOKA AUTENTIFIKACIJE
 
-### Code Splitting
+- Informaciju o tome da li smo ulogovani cuvamo u sessionStorage privremenoj memoriji browsera.
+- Kada nam zatreba provera da li smo ulogovani, tu proveru vrsimo pozivom funkcije isLoggedIn() iz storageService koja nam saopstava da 
+li jesmo ili nismo ulogovani koja to utvrdjuje na bazi tih podataka sacuvanih u sessionStorage.
+- Komponenta App koja je praktično "root" tj. nalazi se na vrhu aplikacije i mountuje se samo jednom (kada se aplikacija pokrene) i 
+vise nikada se ne uklanja je u nasem resenju najprakticnije mesto da proverimo da li smo ulogovani.
+Tu proveru vrsimo odmah pri vrhu App komponente pozivom isLoggedIn() funkcije.
+I dalje taj podatak prosledjujemo drugim komponentama putem props-a
+loggedIn={loggedIn}
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- komponenta Footer na primer na bazi props.loggedIn nam prikazuje ili link "Sign in" ili "Log out".
+To je nacin na koji sve nase komponente, koje trebaju, saznavaju podatak da li smo ulogovani.
 
-### Analyzing the Bundle Size
+- Nakon uspesnog logovanja ili registrovanja vrsi se upis odgovarajucih podataka u sessionStorage.
+Taj upis vrsi funkcija storeUserData iz storageService. Ta funkcija upotrebljava modul 'jsonwebtoken' jer taj modul zahteva nas API 
+za ovu aplikaciju.
+- Odmah nakon zapisa novog podatka o logovanju izvrsavamo "reload" browsera pozivom funkcije browserReloadGoHome()
+- Tako na najprostiji nacin ponovo izvrsavamo kod App komponente koja ce opet da proveri da li smo ulogovani. 
+Tako se menja stanje cele aplikacije iz stanja ulogovan u stanje izlogovan i obrnuto.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+## STA NIJE JOS URADJENO?
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- Dashboard stranica je placeholder. Jos uvek ne prikazuje prave brojeve sa servera.
 
-### Advanced Configuration
+- Update posta nije uradjen.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Nakon dodavanja posta, ostaje na stranici forme. Mora rucno da se klikne na link My posts bi se prikazala lista mojih postova.
 
-### Deployment
+- Na stranici "My posts" nakon brisanja posta postoji nekakav bug i stranica nece da se refreshuje kako treba. Mora rucno da se jos jednom da se vrati na stranicu My posts da bi se lista postova ponovo prikazala.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Prikaz gresaka u formi nije uradjen.
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Ime autora posta i broj komentara nisu prikazani.

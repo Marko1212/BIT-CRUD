@@ -4,12 +4,12 @@ import FormTitle from "../../components/FormTitle/FormTitle";
 // import Input from "../../components/Input/Input";
 import Checkbox from "../../components/CheckBox/CheckBox";
 import Button from "../../components/Button/Button";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
-import { login } from "../../../services/loginService";
+import { postCreate } from "../../../services/postsService";
 
 
-class Login extends React.Component {
+class CreatePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class Login extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.submitLogin = this.submitLogin.bind(this);
+    this.submitCreate = this.submitCreate.bind(this);
   }
 
   handleInputChange(event) {
@@ -32,38 +32,40 @@ class Login extends React.Component {
     });
   }
 
-  submitLogin() {
+  submitCreate() {
     let submitData = {
-      email: this.state.email,
-      password: this.state.password
+      title: this.state.title,
+      subtitle: this.state.subtitle,
+      imageUrl: this.state.imageUrl,
+      text: this.state.text,
+      isPublic: true
     }
-    login(submitData);
+    postCreate(submitData);
   }
 
   render() {
+
     let onClick = () => {
       console.log('click');
-      this.submitLogin();
+      this.submitCreate();
     }
-    let cols = 12;
 
     return (
       <div className="container">
 
         <div className="row">
-          <Title text={"Login"} />
-          <FormTitle title={"Sign in"} />
+          <Title text={"Create post"} />
         </div>
 
         <div className="row">
 
           <div className="col s12">
             <label>
-              {"Email Address *"}
+              {"Title"}
               <input
                 type="text"
                 className="validate"
-                name="email"
+                name="title"
                 onChange={this.handleInputChange}
               />
             </label>
@@ -71,33 +73,52 @@ class Login extends React.Component {
 
           <div className="col s12">
             <label>
-              {"Password *"}
+              {"Subtitle"}
               <input
-                type="password"
+                type="text"
                 className="validate"
-                name="password"
+                name="subtitle"
+                onChange={this.handleInputChange}
+              />
+            </label>
+          </div>
+
+          <div className="col s12">
+            <label>
+              {"image URL"}
+              <input
+                type="text"
+                className="validate"
+                name="imageUrl"
+                onChange={this.handleInputChange}
+              />
+            </label>
+          </div>
+
+          <div className="col s12">
+            <label>
+              {"Body"}
+              <input
+                type="text"
+                className="validate"
+                name="text"
                 onChange={this.handleInputChange}
               />
             </label>
           </div>
 
         </div>
-
         <div className="row">
-          <Checkbox children={"Remember me."} />
         </div>
-
         <div className="row">
-          <Button text={"SIGN IN"} onClick={onClick} />
+          <Button text={"SAVE"} onClick={onClick} />
         </div>
-
         <div className="row">
-          <p><Link to="/">Forgot password?</Link></p>
-          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
         </div>
 
       </div>
     );
   }
 }
-export default Login;
+
+export default CreatePost;

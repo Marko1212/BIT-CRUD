@@ -3,8 +3,10 @@
 }
 
 nav>div>span {
-
 padding: 0 0 0 15px;
 font-size : 30px
+}
 
+.header-title {
+  font-size: 30px;
 }

@@ -2,6 +2,9 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #3a4ca9;
+  border-top: 1px solid #3a4ca9;
   text-align: left;
 }

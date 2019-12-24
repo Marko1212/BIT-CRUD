@@ -2,7 +2,7 @@
 .post {
     width: 20%;
     margin: 2%;
-    background: blue;   
+    background: #3a4ca9;;   
 }
 .post .post_image {
     width: 100%;
@@ -10,23 +10,23 @@
 }
 .post img {
     width: 100%;
-    height: 200px;
+    /* height: 200px; */
 }
 .post_title, .post_tekst{
     color: white;
     padding: 10px;
 }
 .post_title h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 .post_title h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 .post_tekst {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .post_footer {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-align: center;
     color:white;
     margin: 10px 0;
