@@ -17,6 +17,12 @@ import { isLoggedIn } from './services/storageService';
 class App extends React.Component {
 
   render() {
+    /*
+    App komponenta je na vrhu nase apliakcije.
+    Prva se mountuje i nikada se ne dismountuje.
+    prva se pokrene pre svih ostalih
+    */
+   // prva stvar koju App kompionenta uradi je da proveri da li smo ulogovani
     const loggedIn = isLoggedIn();
     console.log('CHECK', loggedIn);
 

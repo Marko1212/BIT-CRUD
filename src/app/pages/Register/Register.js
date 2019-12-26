@@ -35,7 +35,6 @@ class Register extends React.Component {
   }
 
   submitRegister() {
-
     let submitData = {
       name: this.state.firstname,
       email: this.state.email,
