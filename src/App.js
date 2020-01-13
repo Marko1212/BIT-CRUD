@@ -22,7 +22,7 @@ class App extends React.Component {
     Prva se mountuje i nikada se ne dismountuje.
     prva se pokrene pre svih ostalih
     */
-   // prva stvar koju App kompionenta uradi je da proveri da li smo ulogovani
+    // prva stvar koju App komponenta uradi je da proveri da li smo ulogovani
     const loggedIn = isLoggedIn();
     console.log('CHECK', loggedIn);
 
