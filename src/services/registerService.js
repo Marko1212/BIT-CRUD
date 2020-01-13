@@ -6,7 +6,7 @@ import { handleError } from "./errorService";
 
 const register = (data) => {
   let onRegisterSuccess = (response) => {
-    // call me when data is fetched succesfully
+    // call me when data are fetched successfully
     console.log('register success ');
     console.log(response);
     storeUserData(response.data);

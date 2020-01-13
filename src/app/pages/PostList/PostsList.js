@@ -15,7 +15,7 @@ class PostsList extends Component {
 
   componentDidMount() {
     let onFetchSuccess = (posts) => {
-      // call me when data is fetched succesfully
+      // call me when data are fetched successfully
       console.log('data fetching success ');
       console.log(posts);
       this.setState({ posts: posts });

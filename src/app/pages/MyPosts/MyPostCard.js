@@ -12,7 +12,7 @@ const MyPostCard = ({ post, reload }) => {
     console.log('click');
     let postId = post.id;
     postDelete(postId, () => {
-      // call me when data is fetched succesfully
+      // call me when data are fetched successfully
       console.log('post deleted');
       // reload browser tab to show new list after deleting
       browserReload();

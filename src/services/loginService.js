@@ -6,7 +6,7 @@ import { handleError } from "./errorService";
 
 export const login = (data) => {
   let onLoginSuccess = (response) => {
-    // call me when data is fetched succesfully
+    // call me when data are fetched successfully
     console.log('Login success ');
     console.log(response);
     storeUserData(response.data);
