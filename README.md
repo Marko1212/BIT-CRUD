@@ -51,7 +51,7 @@ Za sada ta funkcija samo ispise "ERROR" i sadrzaj greske u console, cisto da bis
   I dalje taj podatak prosledjujemo drugim komponentama putem props-a
   loggedIn={loggedIn}
 
-- komponenta Footer na primer na bazi props.loggedIn nam prikazuje ili link "Sign in" ili "Log out".
+- Komponenta Footer na primer na bazi props.loggedIn nam prikazuje ili link "Sign in" ili "Log out".
   To je nacin na koji sve nase komponente, koje trebaju, saznavaju podatak da li smo ulogovani.
 
 - Nakon uspesnog logovanja ili registrovanja vrsi se upis odgovarajucih podataka u sessionStorage.
