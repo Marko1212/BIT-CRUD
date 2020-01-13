@@ -74,4 +74,6 @@ Za sada ta funkcija samo ispise "ERROR" i sadrzaj greske u console, cisto da bis
 
 - Prikaz gresaka u formi nije uradjen.
 
+- Search nije uradjen.
+
 - Ime autora posta i broj komentara nisu prikazani.

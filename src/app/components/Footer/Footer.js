@@ -14,11 +14,12 @@ const Footer = (props) => {
   let footerLink = null;
   if (loggedIn === true) {
     footerLink = (
-      <a className="logout" href="#" onClick={logoutClicked}>Log out</a>
+      /*<a className="logout" href="#" onClick={logoutClicked}>Log out</a>*/
+      <Link to="/login" onClick={logoutClicked}>Log out</Link>
     );
   } else {
     footerLink = (
-      <Link to='/login'>Sign in</Link>
+      <Link to="/login">Sign in</Link>
     );
   }
 
