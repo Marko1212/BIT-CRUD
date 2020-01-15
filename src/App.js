@@ -18,7 +18,7 @@ class App extends React.Component {
 
   render() {
     /*
-    App komponenta je na vrhu nase apliakcije.
+    App komponenta je na vrhu nase aplikacije.
     Prva se mountuje i nikada se ne dismountuje.
     prva se pokrene pre svih ostalih
     */
