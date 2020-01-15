@@ -2,7 +2,7 @@ import React from "react";
 import Title from "../../components/Title/Title";
 import FormTitle from "../../components/FormTitle/FormTitle";
 // import Input from "../../components/Input/Input";
-import Checkbox from "../../components/CheckBox/CheckBox";
+import CheckBox from "../../components/CheckBox/CheckBox";
 import Button from "../../components/Button/Button";
 import { Link } from 'react-router-dom';
 
@@ -84,7 +84,7 @@ class Login extends React.Component {
         </div>
 
         <div className="row">
-          <Checkbox children={"Remember me."} />
+          <CheckBox children={"Remember me."} />
         </div>
 
         <div className="row">
