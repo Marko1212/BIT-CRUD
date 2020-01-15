@@ -2,7 +2,9 @@ var jwt = require('jsonwebtoken');
 
 export const storeUserData = (response) => {
   // nakon uspesnog logovanja stigli su podaci sa servera. Dekodiramo ih pomocu jsonwebtoken
+  console.log(response);
   let user = jwt.decode(response.accessToken);
+  console.log(user);
   let userId = user.id.toString();
   // kada su podaci sa servera dekodirani i pretvoreni u upotrebljive informacije, zapisujemo ih u storage memoriju browsera
   sessionStorage.setItem("accessToken", response.accessToken);
@@ -20,6 +22,7 @@ export const logout = () => {
   sessionStorage.clear();
   // kada su podaci svi obrisani iz browser storagea, vrsimo refresh browsera
   browserReloadGoHome();
+
 }
 
 export const isLoggedIn = () => {
