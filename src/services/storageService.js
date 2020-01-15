@@ -37,7 +37,9 @@ export const isLoggedIn = () => {
 }
 
 export const browserReload = () => {
-  window.location.reload(true); // reload browser tab
+
+  window.location.reload(true); /*reload browser tab */
+
 };
 
 export const browserReloadGoHome = () => {
