@@ -22,13 +22,13 @@ const axiosConfig = {
 
 export const getRequestPublic = (url, onSuccess, onFail) => {
   return axios.get(url, axiosConfigPublic)
-    .then(response => onSuccess(response))
+    .then(response => { console.log(response); onSuccess(response) })
     .catch(error => onFail(error.response));
 }
 
 export const postRequestPublic = (url, data, onSuccess, onFail) => {
   return axios.post(url, data, axiosConfigPublic)
-    .then(response => onSuccess(response))
+    .then(response => { console.log(response); onSuccess(response) })
     .catch(error => onFail(error.response));
 }
 
