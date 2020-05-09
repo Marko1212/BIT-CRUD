@@ -1,6 +1,6 @@
 ﻿# TEHNICKI OPIS
 
-- React aplikacija je uradjena pomocu create-react-app
+- ReactJS aplikacija je uradjena pomocu create-react-app.
 
 ## BARATANJE FORMAMA
 
