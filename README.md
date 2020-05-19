@@ -55,7 +55,7 @@ Za sada ta funkcija samo ispise "ERROR" i sadrzaj greske u console, cisto da bis
   To je nacin na koji sve nase komponente, koje trebaju, saznavaju podatak da li smo ulogovani.
 
 - Nakon uspesnog logovanja ili registrovanja vrsi se upis odgovarajucih podataka u sessionStorage.
-  Taj upis vrsi funkcija storeUserData iz storageService. Ta funkcija upotrebljava modul 'jsonwebtoken' jer taj modul zahteva nas API
+  Taj upis vrsi funkcija storeUserData iz storageService. Ta funkcija upotrebljava modul 'jsonwebtoken' jer taj modul zahteva naš API
   za ovu aplikaciju.
 - Odmah nakon zapisa novog podatka o logovanju izvrsavamo "reload" browsera pozivom funkcije browserReloadGoHome()
 - Tako na najprostiji nacin ponovo izvrsavamo kod App komponente koja ce opet da proveri da li smo ulogovani.
