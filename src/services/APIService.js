@@ -3,7 +3,9 @@ import axios from 'axios';
 const axiosConfigPublic = {
   headers: {
     'Content-Type': 'application/json',
-    'x-api-key': 'B1tD3V'
+    'x-api-key': 'B1tD3V',
+    //withCredentials: true,
+    //crossorigin: true
   }
 }
 
@@ -13,7 +15,9 @@ const axiosConfig = {
   headers: {
     "Content-Type": "application/json",
     "x-api-key": "B1tD3V",
-    Authorization: "Bearer " + accessToken
+    Authorization: "Bearer " + accessToken,
+    //withCredentials: true,
+    //crossorigin: true
   }
 }
 
